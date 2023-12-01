@@ -224,3 +224,39 @@ npm i -S @connect2ic/core @connect2ic/svelte
 
 <img height=340 src="https://i.imgur.com/aGREctC.png" />
 
+
+# How to publish a new package
+1. Update the Version
+Goto packages/core/package.json, bumping the version.
+
+2. Build the Package
+`connect2ic>npm run build`
+3. For instance, if updating the "core" package, open packages/core/package.json.
+Change the "name" field to "@connect2icmodclub/core" to publish under the correct scope.
+5. Goto package.json, change "private" to false.
+6. Run publish
+`connect2ic/packages/core> npm publish`
+Upon successful publication, you should see messages similar to the following:
+```npm notice === Tarball Details === 
+npm notice name:          @connect2icmodclub/core                 
+npm notice version:       0.0.3                                   
+npm notice filename:      connect2icmodclub-core-0.0.3.tgz        
+npm notice package size:  796.2 kB                                
+npm notice unpacked size: 1.5 MB                                  
+npm notice shasum:        6a570e6388fd5c311886722d84f3cb03d42ce8ae
+npm notice integrity:     sha512-aekjpj+tEfuLA[...]ANQ3rEWQWfCpA==
+npm notice total files:   79                                      
+npm notice 
+npm notice Publishing to https://registry.npmjs.org/ with tag latest and default access
++ @connect2icmodclub/core@0.0.3
+```
+
+## Notes
+This observation may need attention in the future. Renaming to @connect2icmodclub/core leads to build failures (lots of errors observed). Building must be done with @connect2/core, and publishing with @connect2icmodclub/core. (Clean-up tasks may be necessary.)
+
+
+
+
+
+
+
